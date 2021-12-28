@@ -4,8 +4,11 @@
   --bg-primary: #262525;
   --bg-secondary: #383636;
   --blue-primary: #26e4eb;
-  --bg-secondary: #5ce8ed;
+  --blue-secondary: #5ce8ed;
   --text: #fff;
+  --text-gray: gray;
+  --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  --border-radius: 10px;
 }
 
 html, body {

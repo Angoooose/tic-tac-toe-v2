@@ -1,0 +1,33 @@
+header {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--card-shadow);
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    margin: 25px auto;
+}
+
+.header-text {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.header-muted {
+    color: var(--text-gray);
+    font-size: 22px;
+}
+
+.header-img {
+    height: 40px;
+    width: 40px;
+    user-select: none;
+}
+
+.header-img:hover {
+    cursor: pointer;
+    transition: 0.5s;
+}
