@@ -3,8 +3,8 @@
 :root {
   --bg-primary: #262525;
   --bg-secondary: #383636;
+  --bg-blue: rgba(38, 228, 235, 0.3);
   --blue-primary: #26e4eb;
-  --blue-secondary: #5ce8ed;
   --text: #fff;
   --text-gray: gray;
   --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
