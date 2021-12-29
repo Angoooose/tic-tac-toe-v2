@@ -1,9 +1,10 @@
 import '../styles/Board.css';
 
 import { useState } from 'react';
+import BoardValue from '../Types/BoardValue';
 
 export default function Board() {
-    const [board, setBoard] = useState<(''|'X'|'O')[]>(Array(9).fill(''));
+    const [board, setBoard] = useState<BoardValue[]>(Array(9).fill(''));
 
     function handleSquareClick(index: number) {
         let updatedBoard = [...board];

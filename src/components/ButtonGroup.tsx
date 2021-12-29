@@ -1,14 +1,5 @@
 import '../styles/ButtonGroup.css';
-
-interface ButtonGroupProps {
-    buttons: ButtonValue[],
-}
-
-interface ButtonValue {
-    label: string,
-    selected: boolean,
-    onClick: () => any,
-}
+import ButtonGroupProps from '../Types/ButtonGroupProps';
 
 export default function ButtonGroup(props: ButtonGroupProps) {
     const { buttons } = props;
