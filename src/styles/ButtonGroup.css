@@ -6,7 +6,19 @@
     border: 2px solid var(--blue-primary);
     border-radius: var(--border-radius);
     width: fit-content;
-    margin: auto;
+    transition: 0.5s;
+}
+
+.button-group-disabled, .button-group-disabled * {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    background-color: unset !important;
+    color: var(--text-gray) !important;
+}
+
+.button-group-disabled:hover * {
+    background-color: unset;
+    color: var(--text-gray);
 }
 
 .button-group-option {
@@ -21,14 +33,11 @@
 .button-group-option:hover {
     cursor: pointer;
     background-color: var(--bg-blue);
-    color: var(--text)
-}
-
-.button-group-option-selected {
-    background-color: var(--bg-blue);
     color: var(--text);
 }
 
-.button-group-option-selected:hover {
+.button-group-option-selected {
+    background-color: var(--bg-blue) !important;
+    color: var(--text) !important;
     cursor: not-allowed;
 }

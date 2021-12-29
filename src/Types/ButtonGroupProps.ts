@@ -1,5 +1,6 @@
 export default interface ButtonGroupProps {
     buttons: ButtonValue[],
+    disabled?: boolean,
 }
 
 interface ButtonValue {
