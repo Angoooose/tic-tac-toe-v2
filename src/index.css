@@ -3,6 +3,7 @@
 :root {
   --bg-primary: #262525;
   --bg-secondary: #383636;
+  --bg-tertiary: #2d2b2b;
   --bg-blue: rgba(38, 228, 235, 0.3);
   --blue-primary: #26e4eb;
   --text: #fff;
@@ -19,4 +20,27 @@ body {
   background-color: var(--bg-primary);
   color: var(--text);
   font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+button {
+    color: var(--text);
+    outline: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button[disabled]:hover {
+    background-color: unset;
 }
