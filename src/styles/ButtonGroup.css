@@ -1,0 +1,34 @@
+.button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--blue-primary);
+    border-radius: var(--border-radius);
+    width: fit-content;
+    margin: auto;
+}
+
+.button-group-option {
+    padding: 10px;
+    border-right: 2px solid var(--blue-primary);
+    user-select: none;
+    font-weight: 600;
+    color: var(--text-gray);
+    transition: 0.5s;
+}
+
+.button-group-option:hover {
+    cursor: pointer;
+    background-color: var(--bg-blue);
+    color: var(--text)
+}
+
+.button-group-option-selected {
+    background-color: var(--bg-blue);
+    color: var(--text);
+}
+
+.button-group-option-selected:hover {
+    cursor: not-allowed;
+}
