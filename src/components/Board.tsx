@@ -1,14 +1,13 @@
 import '../styles/Board.css';
 
-import { useState } from 'react';
-import BoardValue from '../Types/BoardValue';
+import BoardProps from '../Types/BoardProps';
 
-export default function Board() {
-    const [board, setBoard] = useState<BoardValue[]>(Array(9).fill(''));
+export default function Board(props: BoardProps) {
+    const { board, setBoard, settings } = props;
 
     function handleSquareClick(index: number) {
         let updatedBoard = [...board];
-        updatedBoard[index] = 'X';
+        updatedBoard[index] = settings.team.toUpperCase() as ('X'|'O');
         setBoard(updatedBoard);
     }
 
