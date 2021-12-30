@@ -8,7 +8,7 @@ export default function Board(props: BoardProps) {
     function handleSquareClick(index: number) {
         if (gameStatus === 'INCOMPLETE') {
             let updatedBoard = [...board];
-            updatedBoard[index] = settings.team.toUpperCase() as ('X'|'O');
+            updatedBoard[index] = settings.team;
             setBoard(updatedBoard);
         }
     }

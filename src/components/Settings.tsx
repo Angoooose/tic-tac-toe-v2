@@ -2,6 +2,7 @@ import '../styles/Settings.css';
 
 import ButtonGroup from './ButtonGroup';
 import SettingsProps from '../Types/SettingsProps';
+import { Teams } from '../Types/GameSettings';
 
 export default function Settings(props: SettingsProps) {
     const { settings, setSettings, isGameActive, setBoard, gameStatus, setGameStatus } = props;
@@ -12,7 +13,7 @@ export default function Settings(props: SettingsProps) {
         setSettings(newSettings);
     }
 
-    function handleTeamChange(team: ('x'|'o')) {
+    function handleTeamChange(team: Teams) {
         let newSettings = {...settings};
         newSettings.team = team;
         setSettings(newSettings);
@@ -51,13 +52,13 @@ export default function Settings(props: SettingsProps) {
                 <ButtonGroup disabled={isGameActive} buttons={[
                     {
                         label: 'X',
-                        selected: settings.team === 'x',
-                        onClick: () => handleTeamChange('x'),
+                        selected: settings.team === 'X',
+                        onClick: () => handleTeamChange('X'),
                     },
                     {
                         label: 'O',
-                        selected: settings.team === 'o',
-                        onClick: () => handleTeamChange('o'),
+                        selected: settings.team === 'O',
+                        onClick: () => handleTeamChange('O'),
                     },
                 ]}/>
             </div>

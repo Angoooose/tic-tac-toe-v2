@@ -18,7 +18,7 @@ export default function App() {
   const [gameStatus, setGameStatus] = useState<GameStatus>('INCOMPLETE');
   const [settings, setSettings] = useState<GameSettings>({
     difficulty: 'normal',
-    team: 'x',
+    team: 'X',
   });
 
   useEffect(() => {
