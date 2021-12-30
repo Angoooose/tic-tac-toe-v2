@@ -29,9 +29,7 @@ export default function App() {
     }
 
     let newGameStatus = getGameStatus(board, settings.team);
-    if (newGameStatus !== 'INCOMPLETE') {
-      setGameStatus(newGameStatus);
-    }
+    if (newGameStatus !== 'INCOMPLETE') setGameStatus(newGameStatus);
   }, [board]);
 
   return (
@@ -39,7 +37,7 @@ export default function App() {
       <Header/>
       <div className="main-contents">
         <Settings settings={settings} setSettings={setSettings} isGameActive={isGameActive} setBoard={setBoard} gameStatus={gameStatus} setGameStatus={setGameStatus}/>
-        <Board board={board} setBoard={setBoard} settings={settings}/>
+        <Board board={board} setBoard={setBoard} settings={settings} gameStatus={gameStatus}/>
       </div>
     </div>
   );

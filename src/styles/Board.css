@@ -19,6 +19,7 @@
     width: 100px;
     transition: 0.2s;
     user-select: none;
+    font-weight: 300;
 }
 
 .clickable-square:hover {
