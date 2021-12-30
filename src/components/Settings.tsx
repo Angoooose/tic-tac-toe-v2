@@ -4,7 +4,7 @@ import ButtonGroup from './ButtonGroup';
 import SettingsProps from '../Types/SettingsProps';
 
 export default function Settings(props: SettingsProps) {
-    const { settings, setSettings, isGameActive, setBoard } = props;
+    const { settings, setSettings, isGameActive, setBoard, gameStatus, setGameStatus } = props;
 
     function handleDifficultyChange(difficulty: ('easy'|'normal'|'hard')) {
         let newSettings = {...settings};
@@ -20,6 +20,7 @@ export default function Settings(props: SettingsProps) {
 
     function restartGame() {
         setBoard(Array(9).fill(''));
+        setGameStatus('INCOMPLETE');
     }
 
     return (
@@ -60,9 +61,14 @@ export default function Settings(props: SettingsProps) {
                     },
                 ]}/>
             </div>
-            <button className="settings-button" onClick={() => restartGame()} disabled={!isGameActive}>
-                Reset
-            </button>
+            <div className="settings-bottom-container">
+                <div className={`status-notification win-status ${gameStatus !== 'WIN' ? 'hidden' : ''}`}>You won!</div>
+                <div className={`status-notification lose-status ${gameStatus !== 'LOSE' ? 'hidden' : ''}`}>You lost!</div>
+                <div className={`status-notification draw-status ${gameStatus !== 'DRAW' ? 'hidden' : ''}`}>It's a draw!</div>
+                <button className="settings-button" onClick={() => restartGame()} disabled={!isGameActive}>
+                    Reset
+                </button>
+            </div>
         </div>
     )
 }

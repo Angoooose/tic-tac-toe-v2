@@ -6,6 +6,8 @@
   --bg-tertiary: #2d2b2b;
   --bg-blue: rgba(38, 228, 235, 0.3);
   --blue-primary: #26e4eb;
+  --green-primary: #26e052;
+  --red-primary: #f02449;
   --text: #fff;
   --text-gray: gray;
   --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
@@ -43,4 +45,8 @@ button[disabled] {
 
 button[disabled]:hover {
     background-color: unset;
+}
+
+.hidden {
+    display: none;
 }

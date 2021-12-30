@@ -1,4 +1,5 @@
+export type Teams = ('x'|'o');
 export default interface GameSettings {
     difficulty: ('easy'|'normal'|'hard'),
-    team: ('x'|'o'),
+    team: Teams,
 }

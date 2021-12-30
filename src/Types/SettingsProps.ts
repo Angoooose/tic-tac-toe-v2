@@ -1,5 +1,6 @@
 import GameSettings from './GameSettings';
 import BoardValue from './BoardValue';
+import GameStatus from './GameStatus';
 import { Dispatch } from 'react';
 
 export default interface SettingsProps {
@@ -7,4 +8,6 @@ export default interface SettingsProps {
     setSettings: Dispatch<GameSettings>,
     isGameActive: boolean,
     setBoard: Dispatch<BoardValue[]>,
+    gameStatus: GameStatus,
+    setGameStatus: Dispatch<GameStatus>,
 }

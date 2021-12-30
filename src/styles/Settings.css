@@ -19,6 +19,11 @@
     width: -webkit-fill-available; 
 }
 
+.settings-bottom-container {
+    margin-top: auto;
+    width: 100%;
+}
+
 .settings-button {
     border: 2px solid var(--blue-primary);
     border-radius: var(--border-radius);
@@ -34,4 +39,24 @@
 
 .settings-button:hover {
     background-color: var(--bg-blue);
+}
+
+.status-notification {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 10px 0;
+    border-radius: var(--border-radius);
+    padding: 10px;
+}
+
+.win-status {
+    background-color: var(--green-primary);
+}
+
+.lose-status {
+    background-color: var(--red-primary);
+}
+
+.draw-status {
+    background-color: var(--bg-secondary);
 }
