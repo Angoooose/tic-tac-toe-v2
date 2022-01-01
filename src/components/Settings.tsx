@@ -5,7 +5,7 @@ import SettingsProps from '../Types/SettingsProps';
 import { Teams } from '../Types/GameSettings';
 
 export default function Settings(props: SettingsProps) {
-    const { settings, setSettings, isGameActive, setBoard, gameStatus, setGameStatus } = props;
+    const { settings, setSettings, isGameActive, setBoard, gameStatus, setGameStatus, setIsCpuTurn } = props;
 
     function handleDifficultyChange(difficulty: ('easy'|'normal'|'hard')) {
         let newSettings = {...settings};
@@ -15,13 +15,15 @@ export default function Settings(props: SettingsProps) {
 
     function handleTeamChange(team: Teams) {
         let newSettings = {...settings};
-        newSettings.team = team;
+        newSettings.player = team;
+        newSettings.cpu = team === 'X' ? 'O' : 'X';
         setSettings(newSettings);
     }
 
     function restartGame() {
         setBoard(Array(9).fill(''));
         setGameStatus('INCOMPLETE');
+        setIsCpuTurn(false);
     }
 
     return (
@@ -52,12 +54,12 @@ export default function Settings(props: SettingsProps) {
                 <ButtonGroup disabled={isGameActive} buttons={[
                     {
                         label: 'X',
-                        selected: settings.team === 'X',
+                        selected: settings.player === 'X',
                         onClick: () => handleTeamChange('X'),
                     },
                     {
                         label: 'O',
-                        selected: settings.team === 'O',
+                        selected: settings.player === 'O',
                         onClick: () => handleTeamChange('O'),
                     },
                 ]}/>

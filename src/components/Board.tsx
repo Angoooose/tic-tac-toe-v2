@@ -3,13 +3,14 @@ import '../styles/Board.css';
 import BoardProps from '../Types/BoardProps';
 
 export default function Board(props: BoardProps) {
-    const { board, setBoard, settings, gameStatus } = props;
+    const { board, setBoard, settings, gameStatus, isCpuTurn, setIsCpuTurn } = props;
 
     function handleSquareClick(index: number) {
-        if (gameStatus === 'INCOMPLETE') {
+        if (gameStatus === 'INCOMPLETE' && !isCpuTurn && board[index] === '') {
             let updatedBoard = [...board];
-            updatedBoard[index] = settings.team;
+            updatedBoard[index] = settings.player;
             setBoard(updatedBoard);
+            setIsCpuTurn(true);
         }
     }
 

@@ -8,4 +8,6 @@ export default interface BoardProps {
     setBoard: Dispatch<BoardValue[]>,
     settings: GameSettings,
     gameStatus: GameStatus,
+    isCpuTurn: boolean,
+    setIsCpuTurn: Dispatch<boolean>,
 }

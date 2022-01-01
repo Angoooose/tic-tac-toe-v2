@@ -10,4 +10,5 @@ export default interface SettingsProps {
     setBoard: Dispatch<BoardValue[]>,
     gameStatus: GameStatus,
     setGameStatus: Dispatch<GameStatus>,
+    setIsCpuTurn: Dispatch<boolean>,
 }
