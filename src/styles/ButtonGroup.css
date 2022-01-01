@@ -12,7 +12,7 @@
 
 .button-group-disabled, .button-group-disabled * {
     opacity: 0.5;
-    cursor: not-allowed !important;
+    cursor: default !important;
     background-color: unset !important;
     color: var(--text-gray) !important;
 }
@@ -40,5 +40,5 @@
 .button-group-option-selected {
     background-color: var(--bg-blue) !important;
     color: var(--blue-primary) !important;
-    cursor: not-allowed;
+    cursor: default;
 }
