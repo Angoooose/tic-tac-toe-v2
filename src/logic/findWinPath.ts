@@ -2,7 +2,7 @@ import BoardValue from '../Types/BoardValue';
 import { Teams } from '../Types/GameSettings';
 
 export default function findWinPath(board: BoardValue[], playerTeam: Teams): number {
-    let optimalWinPath: number[] = [-1];
+    let optimalWinPaths: number[][] = [];
 
     const r1: number[] = [0, 1, 2];
     const r2: number[] = [3, 4, 5];
@@ -13,23 +13,19 @@ export default function findWinPath(board: BoardValue[], playerTeam: Teams): num
     const diagDown: number[] = [0, 4, 8];
     const diagUp: number[] = [6, 4, 2];
 
-    if (board[0] !== playerTeam && board[1] !== playerTeam && board[2] !== playerTeam) {
-        optimalWinPath = r1;
-    } else if (board[3] !== playerTeam && board[4] !== playerTeam && board[5] !== playerTeam) {
-        optimalWinPath = r2;
-    } else if (board[6] !== playerTeam && board[7] !== playerTeam && board[8] !== playerTeam) {
-        optimalWinPath = r3;
-    } else if (board[0] !== playerTeam && board[3] !== playerTeam && board[6] !== playerTeam) {
-        optimalWinPath = c1;
-    } else if (board[1] !== playerTeam && board[4] !== playerTeam && board[7] !== playerTeam) {
-        optimalWinPath = c2;
-    } else if (board[2] !== playerTeam && board[5] !== playerTeam && board[8] !== playerTeam) {
-        optimalWinPath = c3;
-    } else if (board[0] !== playerTeam && board[4] !== playerTeam && board[8] !== playerTeam) {
-        optimalWinPath = diagDown;
-    } else if (board[6] !== playerTeam && board[4] !== playerTeam && board[2] !==playerTeam) {
-        optimalWinPath = diagUp;
-    }
+    if (board[0] !== playerTeam && board[1] !== playerTeam && board[2] !== playerTeam) optimalWinPaths.push(r1);
+    if (board[3] !== playerTeam && board[4] !== playerTeam && board[5] !== playerTeam) optimalWinPaths.push(r2);
+    if (board[6] !== playerTeam && board[7] !== playerTeam && board[8] !== playerTeam) optimalWinPaths.push(r3);
+    if (board[0] !== playerTeam && board[3] !== playerTeam && board[6] !== playerTeam) optimalWinPaths.push(c1);
+    if (board[1] !== playerTeam && board[4] !== playerTeam && board[7] !== playerTeam) optimalWinPaths.push(c2);
+    if (board[2] !== playerTeam && board[5] !== playerTeam && board[8] !== playerTeam) optimalWinPaths.push(c3);
+    if (board[0] !== playerTeam && board[4] !== playerTeam && board[8] !== playerTeam) optimalWinPaths.push(diagDown);
+    if (board[6] !== playerTeam && board[4] !== playerTeam && board[2] !== playerTeam) optimalWinPaths.push(diagUp);
 
-    return optimalWinPath !== [-1] ? board.findIndex((cell, i) => optimalWinPath.includes(i) && cell === '') : -1;
+    if (optimalWinPaths.length > 0) {
+        let chosenPath = optimalWinPaths[Math.floor(Math.random() * optimalWinPaths.length)];
+        return board.findIndex((cell, i) => chosenPath.includes(i) && cell === '');
+    } else {
+        return -1;
+    }
 }
