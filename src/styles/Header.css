@@ -1,6 +1,6 @@
 header {
     background-color: var(--bg-secondary);
-    padding: 20px;
+    padding: 10px 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -24,9 +24,12 @@ header {
     height: 40px;
     width: 40px;
     user-select: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.5s;
 }
 
 .header-img:hover {
     cursor: pointer;
-    transition: 0.5s;
+    background-color: var(--bg-tertiary);
 }

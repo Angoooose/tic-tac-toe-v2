@@ -1,6 +1,5 @@
 import '../styles/Header.css';
 import githubLight from '../assets/GitHub-Mark-Light-120px-plus.png';
-import githubDark from '../assets/GitHub-Mark-120px-plus.png';
 
 export default function Header() {
     return (
@@ -13,8 +12,7 @@ export default function Header() {
                 <img
                     src={githubLight}
                     className="header-img"
-                    onMouseOver={e => e.currentTarget.src = githubDark}
-                    onMouseOut={e => e.currentTarget.src = githubLight}   
+                    alt="GitHub"
                 />
             </a>
         </header>
