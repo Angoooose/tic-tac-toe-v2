@@ -9,13 +9,11 @@ import getRandomChoice from '../getRandomChoice';
 export default function normalCpuChoice(board: BoardValue[], playerTeam: Teams, cpuTeam: Teams) {
 
     if (Math.floor(Math.random() * 10) < 9) {
-        console.log('winning');
         let winningMove = checkWinningMove(board, cpuTeam);
         if (winningMove > -1) return winningMove;
     }
 
     if (Math.floor(Math.random() * 3) === 1) {
-        console.log('defense');
         let defensiveMove = checkDefensiveMove(board, playerTeam);
         if (defensiveMove > -1) return defensiveMove;
     }
