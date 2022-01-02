@@ -38,7 +38,7 @@ export default function App() {
   }, [board]);
 
   useEffect(() => {
-    if (isCpuTurn && board.some(cell => cell === '') && gameStatus === 'INCOMPLETE') {
+    if (isCpuTurn && getGameStatus(board, settings.player) === 'INCOMPLETE') {
       let cpuChoice: number = -1;
       if (settings.difficulty === 'hard') cpuChoice = hardCpuChoice(board, settings.player, settings.cpu);
       if (settings.difficulty === 'normal') cpuChoice = normalCpuChoice(board, settings.player, settings.cpu);
