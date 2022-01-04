@@ -1,6 +1,6 @@
 # tic-tac-toe-v2
 
-A web application for playing tic-tac-toe against a computer opponent (CPU) with varying levels of difficulty. Build using React.
+A web application for playing tic-tac-toe against a computer opponent (CPU) with varying levels of difficulty. Built using React.
 
 # Explanation of CPU behavior
 
